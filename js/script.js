@@ -1,34 +1,34 @@
-if (4 == 9) {
-   console.log('Ok!');
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false 
+};
+
+
+for (let i = 0; i < 2; i++) {
+    const a = prompt('Один из последних просмотренных фильмов', '');
+    const b = prompt('На сколько оцение его?','');
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log('done');
+    } else {
+        console.log('error');
+        i--;
+    }
+}
+
+if (personalMovieDB.count < 10) {
+    console.log('Просмотрено довольно мало фильмов');
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+    console.log('Вы классический зритель');  
+} else if (personalMovieDB.count >= 30) {
+    console.log('Вы киноман');
 } else {
-   console.log('Error');
+    console.log('Произошла ошибка');
 }
 
-const num = 50;
-
-if (num < 49) {
-    console.log('Error');
-} else if (num > 100) {
-    console.log('Mnogo');
-} else {
-    console.log('Ok!');
-}
-
-(num === 50) ? console.log('ok!') : console.log('Error');
-
-const num = 51;
-
-switch (num) {
-    case 49:
-       console.log('Ne verno');
-       break;
-    case 100:
-        console.log('Ne verno');
-        break;
-    case 50:
-        console.log('Verno');
-        break;
-    default:
-        console.log('Ne v etot raz');
-        break;                 
-}
+console.log(personalMovieDB); 
