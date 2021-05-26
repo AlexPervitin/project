@@ -1,87 +1,42 @@
+// 1
+let x=5;
+console.log(x++); // 5
+// 2
+let z = [] + false - null + true; //NaN
+console.log(z);
+// 3
+let y = 1;
+x = y = 2;
+console.log(x); // 2
+// 4
+let m = [] + 1 + 2;
+console.log(m); // 12
+// 5
+console.log(('521'[0])); // 5
+// 6
+console.log(2 && 1 && null && 0 && undefined); // null потому что null это false,
+                                               // 'и' запинается на лжи, 'или' на правде 
+// 7
+console.log(!!(2 + 2));
+console.log((2 + 2));  // первое выражение это булиновое значение
+// 8
+console.log(null || 2 && 3 || 4);  // 3, потому что по таблице приоритетов операторов
+// 9
+let a = [1, 2, 3];
+let b = [1, 2, 3];
 
-const personalMovieDB = {
-    count: 0,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false,
-    start: function() {
-        function start() {
-            personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
-      
-            while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
-                personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
-            }
-      }
-    },
-    rememberMyFilms: function() {
-        for (let i = 0; i < 2; i++) {
-            const a = prompt('Один из последних просмотренных фильмов', '');
-            const b = prompt('На сколько оцение его?','');
-            if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-                personalMovieDB.movies[a] = b;
-                console.log('done');
-            } else {
-                console.log('error');
-                i--;
-            }
-        }
-    },
-    detectPersonalLevel: function() {
-        if (personalMovieDB.count < 10) {
-            console.log('Просмотрено довольно мало фильмов');
-        } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-            console.log('Вы классический зритель');  
-        } else if (personalMovieDB.count >= 30) {
-            console.log('Вы киноман');
-        } else {
-            console.log('Произошла ошибка');
-        }
-    },
-    showMyDB:function (hidden) {
-        if (!hidden) {
-            console.log(personalMovieDB);
-        } 
-    },
-    toggleVisibleMyDB:function() {
-        if (personalMovieDB.privat) {
-          personalMovieDB.privat = false;
-        } else {
-            personalMovieDB.privat = true;
-        }
-    },
-    writeYourGeners:function() {
-        for (let i= 1; i < 2; i++) {
-            // let genre = prompt(`Ваш любимый жанр под номером ${i}`);
-            
-            // if (genre === '' || genre === null) {
-            //     console.log('Вы ввели неккоректные данные');
-            //     i--;
-            // } else {
-            //     personalMovieDB.genres[i - 1] = genre;
+if (a == b) {
+    console.log(true);
+} else {
+    console.log(false); 
+}                         // a не равно b, потому что это разные хранилища
 
-            let genres = prompt(`Введите ваши любимые жанры через запятую`).toLowerCase();
-            
-            if (genres === '' || genres === null) {
-                console.log('Вы ввели неккоректные данные');
-                i--;
-            } else {
-                personalMovieDB.genres = genres.split(',');
-                personalMovieDB.genres.sort();
-            }
-            
-            personalMovieDB.genres.forEach((item, i) => {
-                console.log(`Любимый жанр ${i + 1} - это ${item}`);
-            });
-        }
-    }
-    
-};
+// 10
+console.log(+"Infinity"); // Infinity, потому что это бесконечность
 
+// 11
+console.log('Ёжик' > 'яблоко'); // false 
 
+//12 
 
-
-
-
-
-
+console.log(0 || '' || 2 || undefined || true || false); // 2
