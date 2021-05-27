@@ -1,42 +1,47 @@
-// 1
-let x=5;
-console.log(x++); // 5
-// 2
-let z = [] + false - null + true; //NaN
-console.log(z);
-// 3
-let y = 1;
-x = y = 2;
-console.log(x); // 2
-// 4
-let m = [] + 1 + 2;
-console.log(m); // 12
-// 5
-console.log(('521'[0])); // 5
-// 6
-console.log(2 && 1 && null && 0 && undefined); // null потому что null это false,
-                                               // 'и' запинается на лжи, 'или' на правде 
-// 7
-console.log(!!(2 + 2));
-console.log((2 + 2));  // первое выражение это булиновое значение
-// 8
-console.log(null || 2 && 3 || 4);  // 3, потому что по таблице приоритетов операторов
-// 9
-let a = [1, 2, 3];
-let b = [1, 2, 3];
+const box = document.getElementById('box'),
+      btns = document.getElementsByTagName('button'),
+      circles = document.getElementsByClassName('circle'),
+      hearts = document.querySelectorAll('.heart'),
+      oneHeart = document.querySelector('.heart'),  
+      wrapper = document.querySelector('.wrapper');
+    
+      //   box.style.backgroundColor = 'blue';
+    //   box.style.width = '500px';
 
-if (a == b) {
-    console.log(true);
-} else {
-    console.log(false); 
-}                         // a не равно b, потому что это разные хранилища
+      box.style.cssText = 'background-color: blue; width: 500px';
 
-// 10
-console.log(+"Infinity"); // Infinity, потому что это бесконечность
+      btns[1].style.borderRadius = '100%';
+      circles[0].style.backgroundColor = 'red';
 
-// 11
-console.log('Ёжик' > 'яблоко'); // false 
+    //   for (let i = 0; i < hearts.length; i++) {
+    //       hearts[i].style.backgroundColor = 'blue';
+    //   }
 
-//12 
+    hearts.forEach(item => {
+       item.style.backgroundColor = 'blue';
+    });
+    
+    const div = document.createElement('div');
+    // const text = document.createTextNode('Тут был я');
 
-console.log(0 || '' || 2 || undefined || true || false); // 2
+    div.classList.add('black');
+    
+    wrapper.append(div);
+    // wrapper.appendChild(div);
+
+    // wrapper.prepend(div);
+    // hearts[0].before(div);
+    // hearts[0].after(div);
+    // wrapper.insertBefore(div, hearts[2]);
+    // circles[0].remove();
+    // wrapper.removeChild(hearts[1]);
+    // wrapper.replaceChild(circles[0], hearts[0]);
+    // hearts[0].replaceWith(circles[0]);
+    
+    div.innerHTML = "<h1>Hello World</h1>";
+
+    // div.textContent = "Hello";
+
+   div.insertAdjacentHTML('afterend','<h2>Hello</h2>');
+    
+
